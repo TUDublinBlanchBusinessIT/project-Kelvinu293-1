@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, TextInput, Platform } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native';
 
-// Ensure the image path is correct
 const bondgologo = require('./assets/bondgologo.png');
 
 export default function App() {
@@ -10,14 +9,21 @@ export default function App() {
     password: '',
   });
 
+  const handleSignIn = () => {
+    // Handle sign-in logic here
+    console.log('Sign In', form);
+  };
+
+  const handleSignUp = () => {
+    // Handle sign-up navigation or logic here
+    console.log('Sign Up');
+  };
+
   return (
     <View style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.header}>
-          <Image
-            source={bondgologo}
-            style={styles.headerImg}
-          />
+          <Image source={bondgologo} style={styles.headerImg} />
           <Text style={styles.title}>Sign in</Text>
           <Text style={styles.subtitle}>We are here to build up Family Bond</Text>
         </View>
@@ -26,6 +32,8 @@ export default function App() {
           <View style={styles.input}>
             <Text style={styles.inputLabel}>Username</Text>
             <TextInput
+              autoCapitalize="none"
+              autoCorrect={false}
               value={form.username}
               onChangeText={(username) => setForm({ ...form, username })}
               style={styles.textInput}
@@ -39,10 +47,25 @@ export default function App() {
               value={form.password}
               onChangeText={(password) => setForm({ ...form, password })}
               style={styles.textInput}
-              placeholder="Enter your password"
+              placeholder="************"
               secureTextEntry
             />
           </View>
+
+          <View style={styles.formAction}>
+            <TouchableOpacity onPress={handleSignIn}>
+              <View style={styles.btn}>
+                <Text style={styles.btnText}>Sign In</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+
+          <TouchableOpacity onPress={handleSignUp}>
+            <Text style={styles.formFooter}>
+              Don't have an account?{' '}
+              <Text style={{ textDecorationLine: 'underline', color: 'blue' }}>Sign Up Here</Text>
+            </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </View>
@@ -101,5 +124,31 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '100%',
     backgroundColor: 'white',
+  },
+  formAction: {
+    marginVertical: 24,
+  },
+  formFooter: {
+    fontSize: 17,
+    fontWeight: '600',
+    color: 'green',
+    textAlign: 'center',
+    letterSpacing: 0.15,
+  },
+  btn: {
+    backgroundColor: 'red',
+    borderRadius: 8,
+    borderWidth: 1,
+    borderColor: 'yellow',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+  },
+  btnText: {
+    fontSize: 18,
+    fontWeight: '600',
+    color: 'purple',
   },
 });
