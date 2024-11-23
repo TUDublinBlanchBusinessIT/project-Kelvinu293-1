@@ -7,10 +7,14 @@ export default function App() {
       <View style={styles.container}>
         <View style={styles.header}>
           <Image
-            source={require('./assets/bondgologo.png')} 
+            source={require('./assets/bondgologo.png')}
             style={styles.headerImg}
           />
-          <Text style={styles.title}>Sign in To Myapp</Text>
+          <Text style={styles.title}>Sign in</Text>
+
+          <Text style={styles.subtitle}>
+            We here to build up Family Bond
+          </Text>
         </View>
       </View>
     </SafeAreaView>
@@ -37,7 +41,14 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 27,
     fontWeight: '700',
-    color: '#dedede',
-    textAlign: 'center', 
+    color: 'green',
+    textAlign: 'center',
   },
+  subtitle: {
+    fontSize: 15, 
+    fontWeight: '500',
+    color: 'blue',
+    textAlign: 'center'
+  }
 });
+
