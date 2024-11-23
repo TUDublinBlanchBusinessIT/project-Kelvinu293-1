@@ -1,23 +1,51 @@
-import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, Image } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Image, TextInput, Platform } from 'react-native';
+
+// Ensure the image path is correct
+const bondgologo = require('./assets/bondgologo.png');
 
 export default function App() {
+  const [form, setForm] = useState({
+    username: '',
+    password: '',
+  });
+
   return (
-    <SafeAreaView style={styles.safeArea}>
+    <View style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.header}>
           <Image
-            source={require('./assets/bondgologo.png')}
+            source={bondgologo}
             style={styles.headerImg}
           />
           <Text style={styles.title}>Sign in</Text>
+          <Text style={styles.subtitle}>We are here to build up Family Bond</Text>
+        </View>
 
-          <Text style={styles.subtitle}>
-            We here to build up Family Bond
-          </Text>
+        <View style={styles.form}>
+          <View style={styles.input}>
+            <Text style={styles.inputLabel}>Username</Text>
+            <TextInput
+              value={form.username}
+              onChangeText={(username) => setForm({ ...form, username })}
+              style={styles.textInput}
+              placeholder="Enter your username"
+            />
+          </View>
+
+          <View style={styles.input}>
+            <Text style={styles.inputLabel}>Password</Text>
+            <TextInput
+              value={form.password}
+              onChangeText={(password) => setForm({ ...form, password })}
+              style={styles.textInput}
+              placeholder="Enter your password"
+              secureTextEntry
+            />
+          </View>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 }
 
@@ -25,18 +53,22 @@ const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
     backgroundColor: '#eBecf4',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   container: {
-    flex: 1,
-    padding: 24,
+    width: '90%',
+    maxWidth: 400,
+    justifyContent: 'center',
   },
   header: {
-    marginVertical: 36,
+    marginBottom: 36,
+    alignItems: 'center',
   },
   headerImg: {
     width: 80,
     height: 80,
-    alignSelf: 'center',
+    resizeMode: 'contain',
   },
   title: {
     fontSize: 27,
@@ -45,10 +77,29 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   subtitle: {
-    fontSize: 15, 
+    fontSize: 15,
     fontWeight: '500',
     color: 'blue',
-    textAlign: 'center'
-  }
+    textAlign: 'center',
+    marginTop: 10,
+  },
+  form: {
+    marginTop: 20,
+  },
+  input: {
+    marginBottom: 15,
+  },
+  inputLabel: {
+    fontSize: 17,
+    fontWeight: '600',
+    color: 'black',
+  },
+  textInput: {
+    borderWidth: 1,
+    borderColor: 'red',
+    borderRadius: 5,
+    padding: 10,
+    width: '100%',
+    backgroundColor: 'white',
+  },
 });
-
