@@ -4,10 +4,11 @@ import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-nativ
 export default function SignupScreen() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  
+  const [email, setEmail] = useState('');
+  const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleSignUp = () => {
-    console.log('User signed up:', { username, password, });
+    console.log('User signed up:', { username, password, email, phoneNumber });
   };
 
   return (
@@ -28,6 +29,23 @@ export default function SignupScreen() {
         placeholderTextColor="#aaa"
         onChangeText={setPassword}
       />
+      <TextInput
+        style={styles.input}
+        placeholder="Email"
+        autoCapitalize="none"
+        placeholderTextColor="#aaa"
+        onChangeText={setEmail}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Phone Number"
+        autoCapitalize="none"
+        placeholderTextColor="#aaa"
+        onChangeText={setPhoneNumber}
+      />
+      <TouchableOpacity style={styles.button} onPress={handleSignUp}>
+        <Text style={styles.buttonText}>Sign Up</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -54,4 +72,19 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     fontSize: 16,
   },
+  button: {
+    width: '100%',
+    height: 50,
+    backgroundColor: '#007BFF',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 8,
+    marginTop: 16,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
 });
+
