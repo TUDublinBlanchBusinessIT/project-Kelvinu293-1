@@ -4,26 +4,25 @@
     "slug": "bondgo",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/bondgologo.png",
+    "icon": "./bondgologo.png",
     "userInterfaceStyle": "light",
     "splash": {
-      "image": "./assets/bondgologo.png",
+      "image": "./bondgologo.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.yourcompany.bondgo"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/bondgologo.png",
+        "foregroundImage": "./bondgologo.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.yourcompany.bondgo"
+      }
     },
     "web": {
-      "favicon": "./assets/bondgologo.png"
+      "favicon": "./bondgologo.png"
     }
   }
 }
+
