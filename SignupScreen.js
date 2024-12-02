@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
-export default function SignupScreen() {
+export default function SignupScreen({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
@@ -9,6 +9,8 @@ export default function SignupScreen() {
 
   const handleSignUp = () => {
     console.log('User signed up:', { username, password, email, phoneNumber });
+    
+    navigation.navigate('Home');
   };
 
   return (
@@ -87,4 +89,3 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
 });
-
