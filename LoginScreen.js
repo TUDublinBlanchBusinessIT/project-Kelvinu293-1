@@ -50,7 +50,7 @@ export default function LoginScreen({ navigation }) {
           <View style={styles.formAction}>
             <TouchableOpacity onPress={handleSignIn}>
               <View style={styles.btn}>
-                <Text style={styles.btnText}>Sign In</Text>
+                <Text style={styles.btnText}>Login In</Text>
               </View>
             </TouchableOpacity>
           </View>
