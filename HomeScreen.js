@@ -1,17 +1,18 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
 
-// Example tiles for the springboard
 const SPRINGBOARD_ITEMS = [
-  { id: '1', label: 'Profile', action: () => console.log('Go to Profile') },
-  { id: '2', label: 'Settings', action: () => console.log('Go to Settings') },
-  { id: '3', label: 'Messages', action: () => console.log('Go to Messages') },
-  { id: '4', label: 'Logout', action: () => console.log('Log Out') },
+  { id: '1', label: 'Progress', screen: 'Progress' },
+  { id: '2', label: 'Live Activity', screen: 'LiveActivity' },
+  { id: '3', label: 'Review', screen: 'Review' },
 ];
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   const renderItem = ({ item }) => (
-    <TouchableOpacity style={styles.tile} onPress={item.action}>
+    <TouchableOpacity
+      style={styles.tile}
+      onPress={() => navigation.navigate(item.screen)}
+    >
       <Text style={styles.tileText}>{item.label}</Text>
     </TouchableOpacity>
   );
@@ -23,7 +24,7 @@ export default function HomeScreen() {
         data={SPRINGBOARD_ITEMS}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
-        numColumns={2}
+        numColumns={2} // Dynamic grid
         contentContainerStyle={styles.grid}
       />
     </View>
@@ -33,32 +34,33 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
     padding: 16,
+    backgroundColor: '#fff',
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    marginVertical: 16,
+    marginBottom: 16,
+    textAlign: 'center',
   },
   grid: {
-    width: '100%',
-    justifyContent: 'center',
+    alignItems: 'center',
   },
   tile: {
     flex: 1,
-    margin: 10,
-    height: Dimensions.get('window').width / 3 - 20,
+    margin: 8,
+    padding: 10,
+    height: 100, // Adjust tile height
+    maxWidth: '45%', // Ensure it fits smaller screens
     backgroundColor: '#007BFF',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10,
+    borderRadius: 8,
   },
   tileText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 14, // Smaller font size for text
     fontWeight: 'bold',
+    textAlign: 'center',
   },
 });
