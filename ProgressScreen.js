@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   progressBar: {
     width: SCREEN_WIDTH * 0.8, // Progress bar takes up 80% of screen width
     height: 20, // Slimmer progress bar
-    borderRadius: 10,
+    borderRadius: 15,
     marginVertical: 20,
   },
 });
