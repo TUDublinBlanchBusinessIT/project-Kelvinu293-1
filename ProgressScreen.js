@@ -1,12 +1,19 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { ProgressBar } from 'react-native-paper'; // Ensure this package is installed
+
+// Get the screen width dynamically
+const SCREEN_WIDTH = Dimensions.get('window').width;
 
 export default function ProgressScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Progress Screen</Text>
-      <ProgressBar progress={0.5} color="yellow" style={styles.progressBar} /> 
+      <ProgressBar
+        progress={0.5}
+        color="yellow"
+        style={styles.progressBar}
+      />
     </View>
   );
 }
@@ -20,18 +27,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'pink',
   },
   title: {
-    fontSize: 30,
+    fontSize: 26, // Slightly larger for iPhone 14
     fontWeight: 'bold',
-    marginBottom: 5,
+    marginBottom: 20,
+    textAlign: 'center',
   },
   progressBar: {
-    width: '80%',
-    height: 40,
-    borderRadius: 5,
+    width: SCREEN_WIDTH * 0.8, // Progress bar takes up 80% of screen width
+    height: 20, // Slimmer progress bar
+    borderRadius: 10,
     marginVertical: 20,
   },
-
 });
+
 
 
 
