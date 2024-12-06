@@ -45,28 +45,30 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   grid: {
-    alignItems: 'center',
+    justifyContent: 'center',
   },
   tile: {
     flex: 1,
     margin: 8,
     padding: 10,
-    height: 140, // Adjusted height to fit image and text
-    maxWidth: '45%', // Ensure it fits smaller screens
+    height: 150, // Square dimensions
+    width: 100,
     backgroundColor: '#007BFF',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 8,
+    borderRadius: 10, // Slightly rounded corners
   },
   tileImage: {
-    width: 50, // Adjusted size for the images
-    height: 50,
+    width: 80, // Larger image size for emphasis
+    height: 80,
     marginBottom: 8, // Space between image and text
+    resizeMode: 'contain',
   },
   tileText: {
     color: '#fff',
-    fontSize: 14, // Smaller font size for text
+    fontSize: 16, // Larger font size for text
     fontWeight: 'bold',
     textAlign: 'center',
   },
 });
+
