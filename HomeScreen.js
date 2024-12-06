@@ -51,12 +51,12 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 8,
     padding: 10,
-    height: 150, // Square dimensions
+    height: 270, // Square dimensions
     width: 100,
     backgroundColor: '#007BFF',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 10, // Slightly rounded corners
+    borderRadius: 30, // Slightly rounded corners
   },
   tileImage: {
     width: 80, // Larger image size for emphasis
