@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text, TouchableOpacity, FlatList } from 'react-native';
+import { StyleSheet, View, Text, TouchableOpacity, FlatList, Image } from 'react-native';
 
 const SPRINGBOARD_ITEMS = [
-  { id: '1', label: 'Progress', screen: 'Progress' },
-  { id: '2', label: 'Live Activity', screen: 'LiveActivity' },
-  { id: '3', label: 'Review', screen: 'Review' },
+  { id: '1', label: 'Progress', screen: 'Progress', image: require('./target.png') },
+  { id: '2', label: 'Live Activity', screen: 'LiveActivity', image: require('./family.png') },
+  { id: '3', label: 'Review', screen: 'Review', image: require('./review.png') },
 ];
 
 export default function HomeScreen({ navigation }) {
@@ -13,6 +13,7 @@ export default function HomeScreen({ navigation }) {
       style={styles.tile}
       onPress={() => navigation.navigate(item.screen)}
     >
+      <Image source={item.image} style={styles.tileImage} />
       <Text style={styles.tileText}>{item.label}</Text>
     </TouchableOpacity>
   );
@@ -50,12 +51,17 @@ const styles = StyleSheet.create({
     flex: 1,
     margin: 8,
     padding: 10,
-    height: 100, // Adjust tile height
+    height: 140, // Adjusted height to fit image and text
     maxWidth: '45%', // Ensure it fits smaller screens
     backgroundColor: '#007BFF',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
+  },
+  tileImage: {
+    width: 50, // Adjusted size for the images
+    height: 50,
+    marginBottom: 8, // Space between image and text
   },
   tileText: {
     color: '#fff',
