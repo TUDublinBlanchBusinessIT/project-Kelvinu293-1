@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
-    backgroundColor: '#fff',
+    backgroundColor: 'grey',
   },
   title: {
     fontSize: 24,
@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     padding: 10,
     height: 270, // Square dimensions
     width: 100,
-    backgroundColor: '#007BFF',
+    backgroundColor: 'blue',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 30, // Slightly rounded corners
@@ -65,7 +65,7 @@ const styles = StyleSheet.create({
     resizeMode: 'contain',
   },
   tileText: {
-    color: '#fff',
+    color: 'white',
     fontSize: 16, // Larger font size for text
     fontWeight: 'bold',
     textAlign: 'center',

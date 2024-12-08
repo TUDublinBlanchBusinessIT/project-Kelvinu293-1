@@ -96,7 +96,7 @@ export default function LoginScreen({ navigation }) {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: '#eBecf4',
+    backgroundColor: 'yellow',
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -117,13 +117,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 27,
     fontWeight: '700',
-    color: 'green',
+    color: 'black',
     textAlign: 'center',
   },
   subtitle: {
     fontSize: 15,
     fontWeight: '500',
-    color: 'blue',
+    color: 'black',
     textAlign: 'center',
     marginTop: 10,
   },
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   formFooter: {
     fontSize: 17,
     fontWeight: '600',
-    color: 'green',
+    color: 'black',
     textAlign: 'center',
     letterSpacing: 0.15,
   },
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: 'yellow',
+    borderColor: 'purple',
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
@@ -170,6 +170,6 @@ const styles = StyleSheet.create({
   btnText: {
     fontSize: 18,
     fontWeight: '600',
-    color: 'purple',
+    color: 'black',
   },
 });

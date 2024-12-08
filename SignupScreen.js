@@ -20,7 +20,7 @@ export default function SignupScreen({ navigation }) {
         style={styles.input}
         placeholder="Username"
         autoCapitalize="none"
-        placeholderTextColor="#aaa"
+        placeholderTextColor="black"
         onChangeText={setUsername}
       />
       <TextInput
@@ -28,21 +28,21 @@ export default function SignupScreen({ navigation }) {
         placeholder="Password"
         secureTextEntry
         autoCapitalize="none"
-        placeholderTextColor="#aaa"
+        placeholderTextColor="black"
         onChangeText={setPassword}
       />
       <TextInput
         style={styles.input}
         placeholder="Email"
         autoCapitalize="none"
-        placeholderTextColor="#aaa"
+        placeholderTextColor="black"
         onChangeText={setEmail}
       />
       <TextInput
         style={styles.input}
         placeholder="Phone Number"
         autoCapitalize="none"
-        placeholderTextColor="#aaa"
+        placeholderTextColor="black"
         onChangeText={setPhoneNumber}
       />
       <TouchableOpacity style={styles.button} onPress={handleSignUp}>
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 16,
-    backgroundColor: '#fff',
+    backgroundColor: 'yellow',
   },
   title: {
     fontSize: 24,
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
   input: {
     width: '100%',
     height: 50,
-    backgroundColor: '#f0f0f0',
+    backgroundColor: 'white',
     marginBottom: 12,
     paddingHorizontal: 16,
     borderRadius: 8,
@@ -77,14 +77,14 @@ const styles = StyleSheet.create({
   button: {
     width: '100%',
     height: 50,
-    backgroundColor: '#007BFF',
+    backgroundColor: 'blue',
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 8,
     marginTop: 16,
   },
   buttonText: {
-    color: '#fff',
+    color: 'black',
     fontSize: 18,
     fontWeight: 'bold',
   },
