@@ -1,18 +1,21 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 
+//state variables and store the input 
 export default function SignupScreen({ navigation }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
 
+  //handle signup button
   const handleSignUp = () => {
     console.log('User signed up:', { username, password, email, phoneNumber });
     
     navigation.navigate('Home');
   };
 
+  //signup will look like
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Sign Up</Text>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
-import { ProgressBar } from 'react-native-paper'; // Ensure this package is installed
+import { ProgressBar } from 'react-native-paper'; 
 
 // Get the screen width dynamically
 const SCREEN_WIDTH = Dimensions.get('window').width;

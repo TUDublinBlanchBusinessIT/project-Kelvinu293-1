@@ -4,23 +4,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import { faStar as solidStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as regularStar } from '@fortawesome/free-regular-svg-icons';
 
-
+//Starrow componet to display the star ratings
 const StarRow = ({ rating, maxRating, text }) => {
-  const stars = [];
-  for (let i = 1; i <= maxRating; i++) {
+  const stars = []; //array to hold star icons
+  for (let i = 1; i <= maxRating; i++) { //create a loop for star icons based on rating
     stars.push(
       <FontAwesomeIcon
-        key={i}
-        icon={i <= rating ? solidStar : regularStar}
+        key={i} //key is required for react list items
+        icon={i <= rating ? solidStar : regularStar} //solidstar/regularstar for rating 
         size={24}
         color="blue"
-        style={styles.star}
+        style={styles.star} //sytle for indivual star
       />
     );
   }
 
   return (
-    <View style={styles.row}>
+    <View style={styles.row}> 
       <View style={styles.starsContainer}>{stars}</View>
       <Text style={styles.text}>{text}</Text>
     </View>

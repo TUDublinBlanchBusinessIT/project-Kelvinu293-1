@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, TouchableOpacity, FlatList, Image } from 'react-native';
 
+//Array of springboard items for navigation and display on screen
 const SPRINGBOARD_ITEMS = [
   { id: '1', label: 'Progress', screen: 'Progress', image: require('./target.png') },
   { id: '2', label: 'Live Activity', screen: 'LiveActivity', image: require('./family.png') },
@@ -8,25 +9,27 @@ const SPRINGBOARD_ITEMS = [
 ];
 
 export default function HomeScreen({ navigation }) {
+  //function for render each items in the springboard
   const renderItem = ({ item }) => (
     <TouchableOpacity
       style={styles.tile}
-      onPress={() => navigation.navigate(item.screen)}
+      onPress={() => navigation.navigate(item.screen)} //navigation to each items screen
     >
       <Image source={item.image} style={styles.tileImage} />
       <Text style={styles.tileText}>{item.label}</Text>
     </TouchableOpacity>
   );
-
+  
+  //homescreen will look like
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Home</Text>
       <FlatList
-        data={SPRINGBOARD_ITEMS}
-        renderItem={renderItem}
-        keyExtractor={(item) => item.id}
-        numColumns={2} // Dynamic grid
-        contentContainerStyle={styles.grid}
+        data={SPRINGBOARD_ITEMS} //data source for the list
+        renderItem={renderItem} //render each items using renderitem function
+        keyExtractor={(item) => item.id} //item's id as an unique key
+        numColumns={2} // Dynamic grid, 2 coloumn
+        contentContainerStyle={styles.grid} //grid styling 
       />
     </View>
   );

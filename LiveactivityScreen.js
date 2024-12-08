@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, TouchableOpacity, StyleSheet, Image, ScrollView } from 'react-native';
 
+//importing the images
 const Ima = require("./camping.png");
 const pic = require("./concert.png");
 const bow = require("./bowling.png");
@@ -10,6 +11,7 @@ const zoo = require("./zoo.png");
 
 export default function LiveactivityScreen({ navigation }) {
   return (
+    //Scroll down 
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>Live Activity Screen</Text>
       <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
