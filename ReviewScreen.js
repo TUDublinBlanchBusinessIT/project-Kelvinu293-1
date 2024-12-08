@@ -32,8 +32,11 @@ export default function ReviewScreen({ navigation }) {
     <View style={styles.container}>
       <Text style={styles.title}>Review Screen</Text>
       <StarRow rating={3} maxRating={5} text="Rated 3/5: Okay" />
+      <Text>Castle visit was okay, nice scenery but we rather do physical activity</Text>
       <StarRow rating={5} maxRating={5} text="Rated 5/5: Amazing" />
+      <Text>Bowling was amazing we got to show our competitive side</Text>
       <StarRow rating={4} maxRating={5} text="Rated 4/5: Good" />
+      <Text>Camping was good experince to try something new</Text>
     </View>
   );
 }
